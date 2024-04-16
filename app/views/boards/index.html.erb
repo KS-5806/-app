@@ -1,0 +1,22 @@
+<% content_for(:title, t('.title')) %>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <!-- 検索フォーム -->
+      <%= render 'search_form', url: boards_path, q: @q %>
+    </div>
+  </div>
+  <!-- 掲示板一覧 -->
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <% if @boards.present? %>
+          <%= render @boards %>
+        <% else %>
+          <div class="mb-3"><%= t('.no_result') %></div>
+        <% end %>
+        <%= paginate @boards %>
+      </div>
+    </div>
+  </div>
+</div>

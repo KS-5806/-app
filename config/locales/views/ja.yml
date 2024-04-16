@@ -1,0 +1,117 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      email: メールアドレス
+      password: パスワード
+  defaults:
+    post: 投稿
+    message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
+      updated: 掲示板を更新しました
+      profile_updated: ユーザーを更新しました
+      not_updated: 掲示板を更新出来ませんでした
+      profile_not_updated: ユーザーを更新出来ませんでした
+      deleted: 掲示板を削除しました
+      profile_deleted: ユーザーを削除しました
+      delete_confirm: 削除しますか？
+      bookmark: ブックマークしました
+      unbookmark: ブックマークを外しました
+      not_authorized: 権限がありません
+      require_login: ログインしてください
+    search_word: 検索ワード
+    edit: 編集
+    show: 詳細
+    delete: 削除
+    unspecified: 指定なし
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      to_register_page: 登録ページへ
+      password_forget: パスワードをお忘れの方はこちら
+    create:
+      success: ログインしました
+      failure: ログインに失敗しました
+    destroy:
+      success: ログアウトしました
+  users:
+    new:
+      title: ユーザー登録
+      to_login_page: ログインページへ
+    create:
+      success: ユーザー登録が完了しました
+      failure: ユーザー登録に失敗しました
+  header:
+    login: ログイン
+    logout: ログアウト
+    board: 掲示板
+    board_index: 掲示板一覧
+    create_board: 掲示板作成
+    bookmark_index: ブックマーク一覧
+    profile: プロフィール
+  boards:
+    new:
+      title: 掲示板作成
+    show:
+      title: 掲示板詳細
+    index:
+      title: 掲示板一覧
+      no_result: 掲示板がありません
+    edit:
+      title: 掲示板編集
+    bookmarks:
+      no_result: ブックマーク中の掲示板がありません
+  profiles:
+    show:
+      title: プロフィール
+    edit:
+      title: プロフィール編集 
+  application:
+    login:
+      failure: ログインしてください
+  user_mailer:
+    reset_password_email:
+      reset: パスワードリセット
+  password_resets:
+    new:
+      title: パスワードリセット申請
+      submit: 送信
+    edit:
+      title: パスワードリセット
+    create:
+      success: パスワードリセット手順を送信しました
+    update:
+      success: パスワードを変更しました
+      fail: パスワードを変更できませんでした
+  admin:
+    user_sessions:
+      new:
+        title: ログイン
+        login: ログイン
+      create:
+        success: ログインしました
+        failure: ログインに失敗しました
+      destroy:
+        success: ログアウトしました
+    dashboards:
+      index:
+        title: ダッシュボード
+    users:
+      index:
+        title: 'ユーザー一覧'
+      show:
+        title: 'ユーザー詳細'
+      edit:
+        title: 'ユーザー編集'
+    boards:
+      index:
+        title: '掲示板一覧'
+      show:
+        title: '掲示板詳細'
+      edit:
+        title: '掲示板編集'
