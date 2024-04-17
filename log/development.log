@@ -3779,3 +3779,307 @@ Processing by BoardsController#new as HTML
 Completed 200 OK in 48ms (Views: 18.4ms | ActiveRecord: 1.6ms | Allocations: 12015)
 
 
+Started GET "/boards/new" for 192.168.65.1 at 2024-04-17 07:52:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering boards/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered boards/_form.html.erb (Duration: 5.4ms | Allocations: 3461)
+  Rendered boards/new.html.erb within layouts/application (Duration: 20.8ms | Allocations: 7506)
+  Rendered shared/_header.html.erb (Duration: 4.9ms | Allocations: 2438)
+  Rendered shared/_flash_message.html.erb (Duration: 0.5ms | Allocations: 235)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 103.3ms | Allocations: 36210)
+Completed 200 OK in 148ms (Views: 105.9ms | ActiveRecord: 17.1ms | Allocations: 58508)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT GET_LOCK('7864839756650184315', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddBoardImageToBoards (20240417075642)
+  [1m[35m (57.1ms)[0m  [1m[35mALTER TABLE `boards` ADD `board_image` varchar(255)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240417075642')[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('7864839756650184315')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/boards" for 192.168.65.1 at 2024-04-17 07:58:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BoardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "board"=>{"title"=>"test", "body"=>"test", "board_image"=>#<ActionDispatch::Http::UploadedFile:0x0000ffff7feafb58 @tempfile=#<Tempfile:/tmp/RackMultipart20240417-1-slak4y.jpeg>, @content_type="image/jpeg", @original_filename="FCwSil9XsAEGGe7.jpeg", @headers="Content-Disposition: form-data; name=\"board[board_image]\"; filename=\"FCwSil9XsAEGGe7.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_image_cache"=>""}, "commit"=>"登録"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 5.1ms | Allocations: 14894)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'board_image_cache' for Board.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/boards_controller.rb:14:in `create'
+Started POST "/boards" for 192.168.65.1 at 2024-04-17 08:02:17 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BoardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "board"=>{"title"=>"test", "body"=>"test", "board_image"=>#<ActionDispatch::Http::UploadedFile:0x0000ffffad5e7d58 @tempfile=#<Tempfile:/tmp/RackMultipart20240417-1-ywzj4z.jpeg>, @content_type="image/jpeg", @original_filename="FCwSil9XsAEGGe7.jpeg", @headers="Content-Disposition: form-data; name=\"board[board_image]\"; filename=\"FCwSil9XsAEGGe7.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_image_cache"=>""}, "commit"=>"登録"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.8ms | Allocations: 2599)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'board_image_cache' for Board.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/boards_controller.rb:14:in `create'
+Started GET "/boards/new" for 192.168.65.1 at 2024-04-17 08:34:08 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering boards/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered boards/_form.html.erb (Duration: 1.0ms | Allocations: 1486)
+  Rendered boards/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1631)
+  Rendered shared/_header.html.erb (Duration: 2.5ms | Allocations: 1821)
+  Rendered shared/_flash_message.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 6657)
+Completed 200 OK in 25ms (Views: 8.9ms | ActiveRecord: 1.4ms | Allocations: 19098)
+
+
+Started POST "/boards" for 192.168.65.1 at 2024-04-17 08:34:21 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BoardsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "board"=>{"title"=>"test", "body"=>"test", "board_image"=>#<ActionDispatch::Http::UploadedFile:0x0000ffff7febf6c0 @tempfile=#<Tempfile:/tmp/RackMultipart20240417-1-lp2rbn.jpeg>, @content_type="image/jpeg", @original_filename="FCwSil9XsAEGGe7.jpeg", @headers="Content-Disposition: form-data; name=\"board[board_image]\"; filename=\"FCwSil9XsAEGGe7.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_image_cache"=>""}, "commit"=>"登録"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: #extension_whitelist is deprecated, use #extension_allowlist instead. (called from create at /myapp/app/controllers/boards_controller.rb:14)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/boards_controller.rb:15:in `create'
+  [1m[36mBoard Create (2.4ms)[0m  [1m[32mINSERT INTO `boards` (`user_id`, `title`, `body`, `created_at`, `updated_at`, `board_image`) VALUES (1, 'test', 'test', '2024-04-17 08:34:21.947500', '2024-04-17 08:34:21.947500', 'FCwSil9XsAEGGe7.jpeg')[0m
+  ↳ app/controllers/boards_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/boards_controller.rb:15:in `create'
+Redirected to http://localhost:3000/boards
+Completed 302 Found in 33ms (ActiveRecord: 5.2ms | Allocations: 9188)
+
+
+Started GET "/boards" for 192.168.65.1 at 2024-04-17 08:34:21 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BoardsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_search_form.html.erb (Duration: 1.8ms | Allocations: 860)
+  [1m[36mBoard Load (1.9ms)[0m  [1m[34mSELECT DISTINCT `boards`.* FROM `boards` ORDER BY `boards`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+  ↳ app/views/boards/index.html.erb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/boards/index.html.erb:13
+  Rendered boards/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 8224)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 8312)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.2ms | Allocations: 10656)
+
+
+  
+ActionView::Template::Error (Missing partial boards/_board with {:locale=>[:ja], :formats=>[:html, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/myapp/app/views"
+  * "/usr/local/bundle/gems/bootstrap5-kaminari-views-0.0.1/app/views"
+  * "/usr/local/bundle/gems/kaminari-core-1.2.2/app/views"
+  * "/usr/local/bundle/gems/turbo-rails-2.0.5/app/views"
+  * "/usr/local/bundle/gems/actiontext-7.0.8.1/app/views"
+  * "/usr/local/bundle/gems/actionmailbox-7.0.8.1/app/views"
+
+Did you mean?  boards/form
+               boards/search_form
+               shared/header
+               shared/footer
+               shared/before_login_header
+               kaminari/bootstrap-5/gap):
+    11:     <div class="col-12">
+    12:       <div class="row">
+    13:         <% if @boards.present? %>
+    14:           <%= render @boards %>
+    15:         <% else %>
+    16:           <div class="mb-3"><%= t('.no_result') %></div>
+    17:         <% end %>
+  
+app/views/boards/index.html.erb:14
+Started GET "/boards/new" for 192.168.65.1 at 2024-04-17 08:36:55 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering boards/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 190)
+  Rendered boards/_form.html.erb (Duration: 4.3ms | Allocations: 1857)
+  Rendered boards/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2232)
+  Rendered shared/_header.html.erb (Duration: 3.5ms | Allocations: 2117)
+  Rendered shared/_flash_message.html.erb (Duration: 0.6ms | Allocations: 177)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 8249)
+Completed 200 OK in 29ms (Views: 22.0ms | ActiveRecord: 1.9ms | Allocations: 10613)
+
+
+Started GET "/boards" for 192.168.65.1 at 2024-04-17 08:37:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BoardsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_search_form.html.erb (Duration: 1.7ms | Allocations: 583)
+  [1m[36mBoard Load (1.6ms)[0m  [1m[34mSELECT DISTINCT `boards`.* FROM `boards` ORDER BY `boards`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+  ↳ app/views/boards/index.html.erb:13
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/boards/index.html.erb:13
+  Rendered collection of boards/_board.html.erb [1 times] (Duration: 8.5ms | Allocations: 4092)
+  Rendered boards/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 6850)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 6930)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.6ms | Allocations: 8845)
+
+
+  
+ActionView::Template::Error (Missing partial boards/_crud_menus, application/_crud_menus with {:locale=>[:ja], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/myapp/app/views"
+  * "/usr/local/bundle/gems/bootstrap5-kaminari-views-0.0.1/app/views"
+  * "/usr/local/bundle/gems/kaminari-core-1.2.2/app/views"
+  * "/usr/local/bundle/gems/turbo-rails-2.0.5/app/views"
+  * "/usr/local/bundle/gems/actiontext-7.0.8.1/app/views"
+  * "/usr/local/bundle/gems/actionmailbox-7.0.8.1/app/views"
+
+Did you mean?  boards/form
+               boards/board
+               boards/search_form
+               shared/header
+               shared/error_messages
+               kaminari/first_page):
+     9: 					</h4>
+    10: 					<div class="ms-auto">
+    11: 						<% if current_user.own?(board) %>
+    12: 							<%= render 'crud_menus', board: board %>
+    13: 						<% else %>
+    14: 							<%= render 'bookmark_button', board: board %>
+    15: 						<% end %>
+  
+app/views/boards/_board.html.erb:12
+app/views/boards/index.html.erb:14
+Started GET "/boards" for 192.168.65.1 at 2024-04-17 08:37:57 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BoardsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_search_form.html.erb (Duration: 1.3ms | Allocations: 642)
+  [1m[36mBoard Load (1.4ms)[0m  [1m[34mSELECT DISTINCT `boards`.* FROM `boards` ORDER BY `boards`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+  ↳ app/views/boards/index.html.erb:13
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/boards/index.html.erb:13
+  Rendered boards/_crud_menus.html.erb (Duration: 0.7ms | Allocations: 364)
+  Rendered collection of boards/_board.html.erb [1 times] (Duration: 3.1ms | Allocations: 2490)
+  Rendered boards/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 5465)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 5550)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 3.6ms | Allocations: 7880)
+
+
+  
+ActionView::Template::Error (Translation missing: ja.time.formats.short):
+    17: 				</div>
+    18: 				<ul class="list-inline">
+    19: 					<li><i class="bi bi-person"></i><%= board.user.decorate.full_name %></li>
+    20: 					<li><i class="bi bi-calendar"></i><%= l board.created_at, format: :short %></li>
+    21: 				</ul>
+    22: 				<p class="card-text"><%= board.body %></p>
+    23: 			</div>
+  
+app/views/boards/_board.html.erb:20
+app/views/boards/index.html.erb:14
+Started GET "/boards" for 192.168.65.1 at 2024-04-17 08:50:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BoardsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_search_form.html.erb (Duration: 0.3ms | Allocations: 388)
+  [1m[36mBoard Load (0.9ms)[0m  [1m[34mSELECT DISTINCT `boards`.* FROM `boards` ORDER BY `boards`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+  ↳ app/views/boards/index.html.erb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/boards/index.html.erb:13
+  Rendered boards/_crud_menus.html.erb (Duration: 0.1ms | Allocations: 147)
+  Rendered collection of boards/_board.html.erb [1 times] (Duration: 0.8ms | Allocations: 1805)
+  Rendered boards/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3930)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4009)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.8ms | Allocations: 5948)
+
+
+  
+ActionView::Template::Error (Translation missing: ja.time.formats.short):
+    17: 				</div>
+    18: 				<ul class="list-inline">
+    19: 					<li><i class="bi bi-person"></i><%= board.user.decorate.full_name %></li>
+    20: 					<li><i class="bi bi-calendar"></i><%= l board.created_at, format: :short %></li>
+    21: 				</ul>
+    22: 				<p class="card-text"><%= board.body %></p>
+    23: 			</div>
+  
+app/views/boards/_board.html.erb:20
+app/views/boards/index.html.erb:14
+Started GET "/boards" for 192.168.65.1 at 2024-04-17 08:50:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BoardsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_search_form.html.erb (Duration: 0.5ms | Allocations: 388)
+  [1m[36mBoard Load (1.2ms)[0m  [1m[34mSELECT DISTINCT `boards`.* FROM `boards` ORDER BY `boards`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+  ↳ app/views/boards/index.html.erb:13
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/boards/index.html.erb:13
+  Rendered boards/_crud_menus.html.erb (Duration: 0.2ms | Allocations: 147)
+  Rendered collection of boards/_board.html.erb [1 times] (Duration: 1.5ms | Allocations: 1804)
+  Rendered boards/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3929)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4008)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 3.5ms | Allocations: 5667)
+
+
+  
+ActionView::Template::Error (Translation missing: ja.time.formats.short):
+    17: 				</div>
+    18: 				<ul class="list-inline">
+    19: 					<li><i class="bi bi-person"></i><%= board.user.decorate.full_name %></li>
+    20: 					<li><i class="bi bi-calendar"></i><%= l board.created_at, format: :short %></li>
+    21: 				</ul>
+    22: 				<p class="card-text"><%= board.body %></p>
+    23: 			</div>
+  
+app/views/boards/_board.html.erb:20
+app/views/boards/index.html.erb:14
+Started GET "/boards" for 192.168.65.1 at 2024-04-17 08:50:24 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BoardsController#index as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_search_form.html.erb (Duration: 1.4ms | Allocations: 1117)
+  [1m[36mBoard Load (2.0ms)[0m  [1m[34mSELECT DISTINCT `boards`.* FROM `boards` ORDER BY `boards`.`created_at` DESC LIMIT 20 OFFSET 0[0m
+  ↳ app/views/boards/index.html.erb:13
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/boards/index.html.erb:13
+  Rendered boards/_crud_menus.html.erb (Duration: 0.4ms | Allocations: 398)
+  Rendered collection of boards/_board.html.erb [1 times] (Duration: 2.6ms | Allocations: 1824)
+  Rendered boards/index.html.erb within layouts/application (Duration: 47.7ms | Allocations: 18037)
+  Rendered shared/_header.html.erb (Duration: 3.6ms | Allocations: 2197)
+  Rendered shared/_flash_message.html.erb (Duration: 0.6ms | Allocations: 193)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 133)
+  Rendered layout layouts/application.html.erb (Duration: 105.4ms | Allocations: 46413)
+Completed 200 OK in 148ms (Views: 104.2ms | ActiveRecord: 19.7ms | Allocations: 67656)
+
+
