@@ -13,6 +13,11 @@
     <%= f.file_field :board_image, class: 'form-control mb-3', accept: 'image/*', onchange: 'previewImage(preview)' %>
     <%= f.hidden_field :board_image_cache %>
   </div>
+  <div class="form-group">
+    <%= f.label :board_video %>
+    <%= f.file_field :board_video, class: 'form-control mb-3', accept: 'video/*', onchange: 'previewImage(preview)' %>
+    <%= f.hidden_field :board_video_cache %>
+  </div>
 
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
