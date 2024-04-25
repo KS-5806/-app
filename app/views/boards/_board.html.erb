@@ -1,10 +1,12 @@
 <div class="col-sm-12 col-lg-4 mb-3">
 	<div id="board-id-<%= board.id %>">
 		<div class="card">
-			<% if board.board_image.present? %>
-				<%= image_tag board.board_image.url, class: 'card-img-top', size: '300*200' %>
-			<% elsif board.board_video.present? %>
-				<%= video_tag board.board_video.url, class: 'card-img-top', autoplay: false, muted: false, controls: true , size: '300*200' %>
+			<% if board.board_image.present?%>
+				<% if board.board_image.file.content_type.include?('image/') %>
+					<%= image_tag board.board_image.url, class: 'card-img-top', size: '300*200' %>
+				<% else %>
+					<%= video_tag board.board_image.url, class: 'card-img-top', autoplay: false, muted: false, controls: true , size: '300*200' %>
+				<% end %>
 			<% else %>
 				<%= image_tag 'board_placeholder.png', class: 'card-img-top', size: '300*200' %>
 			<% end %>

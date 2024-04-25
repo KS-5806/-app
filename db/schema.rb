@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_18_050816) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_17_075642) do
   create_table "boards", charset: "utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.string "title", null: false
@@ -18,7 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_18_050816) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "board_image"
-    t.string "board_video"
   end
 
   create_table "bookmarks", charset: "utf8mb4", force: :cascade do |t|
