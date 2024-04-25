@@ -39,7 +39,7 @@ class BoardImageUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_whitelist
     # 拡張子の制限（許可）
-    %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png mp4 MOV wmv)
   end
 
   # Override the filename of the uploaded files:

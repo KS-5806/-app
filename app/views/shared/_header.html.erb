@@ -25,7 +25,7 @@
         <li class='nav-item dropdown dropdown-slide'>
           <!-- data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true' }, aria: { expanded: 'false' } -->
           <%= link_to '#', class: 'nav-link', data: {bs_toggle: 'dropdown'}, aria: {haspopup: 'true', expanded: 'false'}, id: 'header-profile' do %>
-            <%= image_tag 'sample.jpg', class: 'rounded-circle mr15', width: '40', height: '40' %>
+            <%= image_tag current_user.avatar.url, class: 'rounded-circle mr15', width: '40', height: '40' %>
           <% end %>
           <div class='dropdown-menu dropdown-menu-end'>
             <div class='dropdown-item'><%= current_user.decorate.full_name %></div>
