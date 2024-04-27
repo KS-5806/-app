@@ -65,6 +65,7 @@ ja:
     edit:
       title: 掲示板編集
     bookmarks:
+      title: ブックマーク一覧
       no_result: ブックマーク中の掲示板がありません
   profiles:
     show:
